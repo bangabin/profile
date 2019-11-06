@@ -12,6 +12,9 @@
         case '4':
             return profile();
             break;
+        case '5':
+            return logout();
+            break;
         default:
             return 0;
             break;
@@ -127,6 +130,15 @@
         $_SESSION['access_token']=$result['data']['user']['access_token'];
         // print_r($result);
         header('Location: profile.php');
+    }
+
+    function logout(){
+        $url = 'http://pretest-qa.privydev.id//api/v1/oauth/revoke';
+        session_start();
+        $_SESSION['access_token']=$result['data']['user']['access_token'];
+        $_SESSION['confirm']=1;
+        // print_r($result);
+        header('Location: signin.php');
     }
 
     function profile(){

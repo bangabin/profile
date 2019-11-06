@@ -12,7 +12,7 @@
 <center>
   <div class="login-box" style="background-color:#fff;width:400px; box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);">
     <div class="login-box-body"  style="border-width: 5px">      
-    <div style="font-size: 12px;margin-bottom: 30px">
+    <div style="font-size: 15px;margin-bottom: 30px">
     <center><img src="img/privyid_logo.png" style="width:150px;"></center>
     <form action="register.php" method="POST" style="margin: 20px;">
     <input type="hidden" name="case" value="3">
@@ -37,32 +37,17 @@
             <option value="1">Android</option>
         </select>
       </div>
-
-  <!-- <small id="regisHelp" class="form-text text-muted">Remember your data to login</small> -->
   <br>
   <button type="submit" class="btn btn-danger btn-block">Login</button>
 </form>
     <br>
-    
+Don't have an account? <a href="register.html" class="text-danger"><b>Sign Up</b></a>
+    <br>
+    <br>
+    <br>    
     </div>
     </div>
     </div>
 </center> 
-
-
-
-<!-- <h1>Please Sign in!</h1>
-    <form action="register.php" method="post">
-        <input type="hidden" name="case" value="3">
-        Phone &nbsp <input type="text" name="phone"><br>
-        Password &nbsp<input type="text" name="password"><br>
-        Latlong &nbsp<input type="text" name="latlong"><br>
-        Device Token &nbsp<input type="text" name="device_token"><br>
-        Device <select name="device">
-            <option value="0">IOS</option>
-            <option value="1">Android</option>
-        </select>
-        <button type="submit">Submit</button>
-    </form> -->
 </body>
 </html>

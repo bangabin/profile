@@ -9,8 +9,6 @@
 </head>
 <body class="hold-transition login-page" style="background-color:#F7F6F6; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
     <?php session_start() ?>
-    <!-- <h1>Account status: <h1 style="color:red"><?php echo $_SESSION['otp']['user_status'] ?></h1></h1>
-    <h3>to Activate Account please Click Submit</h3><br> -->
     <br><br>
     <br><br>
 <center>
@@ -32,13 +30,5 @@
     <button type="submit" class="btn btn-danger btn-block">Submit</button>
 </form>
 <br>
-
-    <!-- <form action="register.php" method="POST">
-        <input type="hidden" name="case" value='2'>
-        <input type="text" name="id" value="<?php echo $_SESSION['otp']['id'] ?>">
-        <input type="text" name="sugar_id" value="<?php echo $_SESSION['otp']['sugar_id'] ?>">
-        <input type="text" name="phone" value="<?php echo $_SESSION['otp']['phone'] ?>">
-        <button type="submit">Submit</button>
-    </form> -->
 </body>
 </html>

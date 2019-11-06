@@ -12,7 +12,7 @@
 <center>
   <div class="login-box" style="background-color:#fff;width:400px; box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);">
     <div class="login-box-body"  style="border-width: 5px">      
-    <div style="font-size: 12px;margin-bottom: 30px">
+    <div style="font-size: 15px;margin-bottom: 30px">
     <center><img src="img/privyid_logo.png" style="width:150px;"></center>
     <form action="register.php" method="POST" style="margin: 20px;">
     <input type="hidden" name="case" value="1">
@@ -27,13 +27,6 @@
   <div class="form-group form-control-sm">
     <input type="text" class="form-control" name="country" placeholder="Country">
   </div>
-  <!-- <div class="form-group form-control-sm">
-    <input type="text" class="form-control" name="latlong" placeholder="Langitude Longitude">
-  </div>
-
-  <div class="form-group form-control-sm">
-    <input type="text" class="form-control" name="device_token" placeholder="Device Token">
-  </div> -->
   <input type="hidden" name="latlong" value="1">
   <input type="hidden" name="device_token" value="1">
 
@@ -43,30 +36,18 @@
             <option value="1">Android</option>
         </select>
       </div>
-
-  <!-- <small id="regisHelp" class="form-text text-muted">Remember your data to login</small> -->
   <br>
   <button type="submit" class="btn btn-danger btn-block">Register</button>
+  <br>
 </form>
-    <br>
-    
+  Already have an account? <a href="signin.php" class="text-danger"><b>Sign In</b></a>
+  <br>
+  <br>
+  <br>
     </div>
     </div>
     </div>
 </center>
-    <!-- <h1>Registration</h1>
-    <form action="register.php" method="POST">
-        <input type="hidden" name="case" value="1">
-        Phone &nbsp <input type="text" name="phone"><br>
-        Password &nbsp<input type="text" name="password"><br>
-        country &nbsp<input type="text" name="country"><br>
-        Latlong &nbsp<input type="text" name="latlong"><br>
-        Device Token &nbsp<input type="text" name="device_token"><br>
-        Device <select name="device">
-            <option value="0">IOS</option>
-            <option value="1">Android</option>
-        </select>
-        <button type="submit">Submit</button>
-    </form> -->
+
 </body>
 </html>

@@ -61,44 +61,14 @@
   <div class="form-group form-control-sm">
     <input type="text" class="form-control" name="ending_in" placeholder="Ending In DD/MM/YYYY">
   </div>
-
   <br>
   <button type="submit" class="btn btn-danger btn-block">Add Profile</button>
+  <br>
+  <br>
+  <br>
+  <button type="submit" name="case" value=5 class="btn btn-outline-danger btn-block">Logout</button>
 </form>
     <br>
-
-    <!-- <h1>Please Fill your Profile</h1>
-    <br>
-    <br>
-    <form action="register.php" method="post">
-        <input type="hidden" name="case" value="4">
-        <h2>Personal information</h2>
-        <br>
-        Name : &nbsp<input type="text" name="name">
-        Gender: <select name="gender">
-            <option value="1">Girl</option>
-            <option value="0">Boy</option>
-        </select>
-        Birthday : &nbsp<input type="text" name="birthday">
-        Hometown : &nbsp<input type="text" name="hometown">
-        Bio : &nbsp
-        <textarea name="bio" id="" cols="3" rows="3"></textarea>
-        <br>
-        <hr>
-        <h2>Education</h2>
-        <br>
-        School Name : &nbsp<input type="text" name="school_name">
-        Graduation Time : &nbsp<input type="text" name="grad_time">
-        <br>
-        <hr>
-        <h2>Career</h2>
-        Position : &nbsp<input type="text" name="position">
-        Company Name : &nbsp<input type="text" name="company_name">
-        Starting From : &nbsp<input type="text" name="starting_from">
-        Ending In : &nbsp<input type="text" name="ending_in">
-        <br>
-        <button type="submit">Submit</button>    
-    </form> -->
     <?php
         }else{
     ?>
