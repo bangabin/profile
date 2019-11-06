@@ -12,7 +12,22 @@
     session_start();
     if (!empty($_SESSION['access_token'])) { 
     ?>
-<br>    
+<br>   
+<?php 
+ $opts = array(
+    'http'=>array(
+      'method'=>"GET",
+      'header'=>"Authorization: ".$_SESSION['access_token']."\r\n"
+    )
+  );
+
+$context = stream_context_create($opts);
+$url = 'http://pretest-qa.privydev.id/api/v1/profile/me';
+// Open the file using the HTTP headers set above
+$file = file_get_contents($url, false, $context);
+$response=json_decode($file);
+$item=$response->data->user;
+?> 
 <center><img src="img/privyid_logo.png" style="width:130px;"></center>
 <br>
 <br>
@@ -24,15 +39,15 @@
       <h5 class="card-header">#Personal Information</h5>
         <br>
         <span class="badge badge-pill badge-light">Name</span>
-        <p class="card-text">Pui</p>
+        <p class="card-text"><?php echo $item->name?></p>
         <span class="badge badge-pill badge-light">Gender</span>
-        <p class="card-text">Girl</p>
+        <p class="card-text"><?php echo $item->gender?></p>
         <span class="badge badge-pill badge-light">Birthday</span>
-        <p class="card-text">23-08-1998</p>
+        <p class="card-text"><?php echo $item->birthday?></p>
         <span class="badge badge-pill badge-light">Home Town</span>
-        <p class="card-text">Yogyakarta</p>
+        <p class="card-text"><?php echo $item->hometown?></p>
         <span class="badge badge-pill badge-light">Bio</span>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><?php echo $item->bio?></p>
       </div>
     </div>
   </div>
@@ -42,9 +57,9 @@
       <h5 class="card-header">#Education</h5>
         <br>
         <span class="badge badge-pill badge-light">School Name</span>
-        <p class="card-text">Universitas Gadjah Mada</p>
+        <p class="card-text"><?php echo $item->education->school_name?></p>
         <span class="badge badge-pill badge-light">Graduation Time</span>
-        <p class="card-text">22-08-2019</p>
+        <p class="card-text"><?php echo $item->education->graduation_time?></p>
     </div>
     </div>
   </div>
@@ -54,13 +69,13 @@
       <h5 class="card-header">#Career</h5>
         <br>
         <span class="badge badge-pill badge-light">Position</span>
-        <p class="card-text">QA</p>
+        <p class="card-text">PM</p>
         <span class="badge badge-pill badge-light">Company</span>
-        <p class="card-text">Privy ID</p>
+        <p class="card-text"><?php echo $item->career->company_name?></p>
         <span class="badge badge-pill badge-light">Starting From</span>
-        <p class="card-text">01-12-2019</p>
+        <p class="card-text"><?php echo $item->career->starting_from?></p>
         <span class="badge badge-pill badge-light">Ending In</span>
-        <p class="card-text">01-12-2020</p>
+        <p class="card-text"><?php echo $item->career->ending_in?></p>
     </div>
     </div>
   </div>

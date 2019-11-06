@@ -66,6 +66,8 @@
   <br>
   <br>
   <br>
+  <a href="myprofile.php" style="text-decoration:none"><button type="submit" class="btn btn-outline-danger btn-block">Lihat Profile</button></a>
+  <br>
   <button type="submit" name="case" value=5 class="btn btn-outline-danger btn-block">Logout</button>
 </form>
     <br>

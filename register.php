@@ -1,23 +1,27 @@
 <?php
-    switch ($_POST['case']) {
-        case '1':
-            return register();
-            break;
-        case '2':
-            return otp();
-            break;
-        case '3':
-            return signin();
-            break;
-        case '4':
-            return profile();
-            break;
-        case '5':
-            return logout();
-            break;
-        default:
-            return 0;
-            break;
+    if(isset($_POST)){
+        switch ($_POST['case']) {
+            case '1':
+                return register();
+                break;
+            case '2':
+                return otp();
+                break;
+            case '3':
+                return signin();
+                break;
+            case '4':
+                return profile();
+                break;
+            case '5':
+                return logout();
+                break;
+            default:
+                return 0;
+                break;
+        }
+    }else{
+        echo 'none';
     }
     function register(){
             
@@ -216,12 +220,31 @@
         $get_data=curl_setopt($ch4,CURLOPT_URL, $url_get_data.$_SESSION['access_token']);
         $response = json_decode($get_data, true);
         $_SESSION['profile'] = $response;
-        print_r($response);
         // $errors = $response['response']['errors'];
         // $data = $response['response']['data'][0];
         // session_start();
         // $_SESSION['profile']=$result['data']['user'];
-        // header('Location: register.php');
+        // $this->getMe();
+        header('Location: myProfile.php');
+    }
 
+    function getMe(){
+        $opts = array(
+            'http'=>array(
+              'method'=>"GET",
+              'header'=>"Authorization: ".$_SESSION['access_token']."\r\n"
+            )
+          );
+
+        $context = stream_context_create($opts);
+        $url = 'http://pretest-qa.privydev.id/api/v1/profile/me';
+        // Open the file using the HTTP headers set above
+        $file = file_get_contents($url, false, $context);
+        echo "tes";
+        return $file;
+    }
+
+    function testt(){
+        echo 'test';
     }
 ?>
